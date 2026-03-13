@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Hurtslabyul </title>
+		<style>
+			body {
+				background-color: #6B5BB0;
+				background-image: url('background.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+				font-family: Lucida Fax;
+			}
+			.hover-text {
+				color: #E3FFF3
+				transition: color 0.3s ease-in-out;
+			}
+			.hover-text:hover {
+				color: #5B7C99;
+				cursor: pointer;
+			}
+			.box {
+				background-color: #C6CEDE;
+				height: auto;
+				width: 100%;
+				outline: 2px solid #E3FFF3;
+			}
+			.navbar {
+				width: 100%;
+				background-color: #C6CEDE;
+				overflow: auto;
+			}
+			.navbar a {
+				float: left;
+				padding: 10px;
+				color: #E3FFF3;
+				text-decoration: none;
+				font-size: 15px;
+				width: 23.5%;
+				text-align: center;
+			}
+			.navbar a:hover {
+				background-color: #E3FFF3;
+				color: #C6CEDE;
+			}
+			footer {
+				background-color: #C6CEDE;
+				height: 240px;
+				width: 100%;
+				outline: 2px solid #E3FFF3;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+			.fade-text {
+				animation: fadeIn 1s ease-out forwards;
+			}
+			.delay {
+				animation-delay: 0.3s;
+			}
+			form#commentform {
+				max-width: auto;
+				margin-left: 2px;
+				padding: 20px;
+				background-color: #E3FFF3;
+				border-radius: 3px;
+				outline: 2px dashed #6B5BB0;
+			}
+			form#commentform input, form#commentform textarea {
+				width: 100%;
+				padding: 5px;
+				box-sizing: border-box;
+				margin-bottom: 10px;
+				background-color: #E3FFF3;
+				color: #6B5BB0;
+				font-family: Tahoma;
+				border-color: #6B5BB0;
+			}
+			form#commentform input[type="submit"] {
+				background-color: #C6CEDE;
+				color: #6B5BB0;
+				border: none;
+				cursor: pointer;
+				width: auto;
+				outline: 2px solid #6B5BB0;
+				font-family: Lucida Fax;
+			}
+			.fake-image {
+				width: 700px;
+				height: 500px;
+				background-color: #ccc;
+				border: 1px solid #aaa;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			.hidden {
+				display: none;
+			}
+			.button-container {
+				display: flex;
+				gap: 15px;
+				justify-content: center;
+				margin-top: 20px;
+			}
+			.btn {
+				padding: 12px 25px;
+				font-size: 1rem;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				color: #6B5BB0;
+				font-weight: bold;
+				font-family: Lucida Fax;
+				transition: transform 0.2s;
+				outline: 2px solid #6B5BB0;
+			}
+			.atc-btn {
+				background-color: #C6CEDE;
+			}
+			.on-btn {
+				background-color: #C6CEDE;
+			}
+			.btn:hover {
+				transform: scale(1.05);
+				opacity: 0.9;
+			}
+			.center-wrapper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+			}
+			.home1:link, .home3:visited {
+				text-decoration: none;
+				color: #E3FFF3;
+				transition: color 0.3s ease-in-out;
+			}
+			.home2:hover {
+				text-decoration: underline;
+				color: #5B7C99;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Leave this section untouched -->
+		<img height="auto" width="1335px" src="banner.png" style="vertical-align: bottom;">
+		<div class="box">
+			<p style="color: #E3FFF3; font-size: 24px; text-align: center; margin-bottom: 3px;" class="fade-text"><strong>WELCOME TO <a href="ecommerceredo.html" class="home1 home2 home3">EVANESCERIS</a>!</p>
+			<hr color="#E3FFF3" size="2px" width="100%" style="margin-bottom: -3px;">
+			<p style="color: #E3FFF3; font-size: 18px; text-align: center; margin-bottom: 3px;" class="fade-text delay"><i>Venture through the shop and find your suitable interests!</i></p>
+		</div>
+		<div class="navbar" style="outline: 2px solid #E3FFF3;">
+			<a href="snc.html">Snacks and Candies</a>
+			<a href="p.html">Phonecases</a>
+			<a href="aboutevan.html">About</a>
+			<a href="blogs.html">Blogs</a>
+		</div>
+		<br>
+		<!-- Modify this section but not entirely -->
+		<main role="main">
+ 			<div style="background-color: #C6CEDE; padding: 20px; border: 2px solid #E3FFF3;">
+				<!-- Insert the image here, remove the div tag below this text, and make sure the image's width is 700px and height is 500px -->
+<img src="https://i.pinimg.com/1200x/c1/34/9d/c1349d5f133b93971c06e2ff16de360f.jpg " width="700" height="500" style="display: block; margin: 0 auto;">
+				<p style="color: #E3FFF3; font-size: 50px; margin-bottom: -10px;">Php 85</p>
+				<h1 style="color: #E3FFF3;">Hurtslabyul</h1>
+				<!-- If using the a href tag, make sure that it is link to the category (e.g. <a href="Phonecases.html">Phonecases</a>) -->
+				<h2 style="color: #E3FFF3;">Phonecase/Twisted Wonderland/Heartslabyul</h2>
+				<div class="center-wrapper">
+					<button class="btn">Like</button>
+					<button class="btn">Dislike</button>
+					<button class="btn">Add to Cart</button>
+					<button onclick="nav('On.html')" class="btn">Order Now</button>
+				</div>
+				<hr color="#E3FFF3" width="100%" size="2px">
+ 				<h2 style="color: #E3FFF3;">Customer Reviews</h2>
+				<form id="commentform" class="comment-form">
+					<p class="comment-form-author">
+ 						<label for="author" style="color: #6B5BB0;">Name <span class="required">*</span></label>
+						<input id="author" name="author" type="text" required>
+					</p>
+					<p class="comment-form-comment">
+						<label for="comment" style="color: #6B5BB0;">Comment</label>
+						<textarea id="comment" name="comment" rows="5" required></textarea>
+					</p>
+					<p class="form-submit">
+						<input type="submit" value="Post Comment">
+						</p>
+				</form>
+				<hr color="#E3FFF3" width="100%" size="2px">
+				<!-- Feel free to change this but please don't add anything inappropriate or destroys the theme. You can add reaction images. -->
+ 				<div class="review-post">
+					<h2 style="color: #E3FFF3;">DeuceSpade </h2>
+					<p style="color: #E3FFF3;">Yu, I told you not to talk about this dream to anyone..!!</p>
+
+<img src="https://i.pinimg.com/1200x/a2/b8/fb/a2b8fbd1bc1539b55aca6a18ee181a7e.jpg" width="500" height="500" style="display: block; margin: 0 auto;">
+
+				</div>
+			</div>
+		</main>
+		<br><br>
+		<footer>
+			<!-- Leave this section untouched  -->
+			<div style="margin-left: 10px; font-size: 25px; color: #E3FFF3;">
+				<dt class="fade-text">Evanesceris</dt>
+				<dd class="fade-text delay">Venture though the shop and find your suitable interests!</dd>
+			</div>
+			<button onclick="toggleText()" style="background-color: #6B5BB0; color: #C6CEDE; border-color: #6B5BB0; margin-left: 10px; margin-top: 20px;">Expand/Collapse</button>
+			<div id="collapsible-text">
+				<p style="color: #E3FFF3; font-size: 30px; margin-left: 10px; margin-bottom: 20px;">To learn more about Evansesceris, click the about button within the navigation bar if you want further details in regards to Evanesceris. You can explore deeper in this website to discover what piques your interest!</p>
+			</div>
+		</footer>
+		<script>
+			<!-- Leave this section untouched (including the css embedded code above) -->
+			function toggleText() {
+				const textElement = document.getElementById('collapsible-text');
+ 				textElement.classList.toggle('hidden');
+			}
+			function nav(url) {
+				window.location.href = url;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Phonecases</title>
+		<style>
+			body {
+				background-color: #6B5BB0;
+				background-image: url('background.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+				font-family: Lucida Fax;
+			}
+			.hover-text {
+				color: #E3FFF3;
+				transition: color 0.3s ease-in-out;
+			}
+			.hover-text:hover {
+				color: #5B7C99;
+				cursor: pointer;
+			}
+			.box {
+				background-color: #C6CEDE;
+				height: auto;
+				width: 100%;
+				outline: 2px solid #E3FFF3;
+			}
+			.navbar {
+				width: 100%;
+				background-color: #C6CEDE;
+				overflow: auto;
+			}
+			.navbar a {
+				float: left;
+				padding: 10px;
+				color: #E3FFF3;
+				text-decoration: none;
+				font-size: 15px;
+				width: 23.5%;
+				text-align: center;
+			}
+			.navbar a:hover {
+				background-color: #E3FFF3;
+				color: #C6CEDE;
+			}
+			footer {
+				background-color: #C6CEDE;
+				height: 240px;
+				width: 100%;
+				outline: 2px solid #E3FFF3;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+			.fade-text {
+				animation: fadeIn 1s ease-out forwards;
+			}
+			.delay {
+				animation-delay: 0.3s;
+			}
+			hr.dashed {
+				border: none;
+				border-top: 2px dashed #E3FFF3;
+			}
+			.product-grid {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 25px;
+				padding: 40px;
+			}
+			.product-card {
+				background-color: #E3FFF3;
+				width: 260px;
+				padding: 20px;
+				border-radius: 15px;
+				text-align: center;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+				transition: transform 0.2s;
+			}
+			.product-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+			}
+			.product-card img {
+				width: 100%;
+				aspect-ratio: 1/1;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1000; 
+				left: 0; 
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+				justify-content: center; 
+				align-items: center;
+			}
+			.modal-content {
+				background-color: #E3FFF3;
+				padding: 20px;
+				border-radius: 15px;
+				width: 90%;
+				max-width: 400px;
+				text-align: center; 
+				border: 2px dashed #C6CEDE; 
+			}
+			.close-btn {
+				position: absolute;
+				top: 10px; right: 15px;
+				cursor: pointer;
+				font-size: 24px;
+			}
+			.add-to-cart {
+				width: 120px;
+				height: 40px;
+				display: block;
+				margin: 10px auto; 
+				padding: 5px;
+				background-color: #C6CEDE;
+				color: #6B5BB03;
+				border: 1px solid #6B5BB03;
+				cursor: pointer;
+				font-size: 14px;
+			}
+			.close-btn {
+				position: absolute;
+				right: 15px; top: 10px;
+				font-size: 24px;
+				cursor: pointer;
+			}
+			.product-image img {
+				width: 100%;
+				display: block;
+			}
+			.product-info {
+				padding: 15px;
+				text-align: center;
+			}
+			.price {
+				font-weight: bold;
+				color: #6B5BB0;
+			}
+			.view-btn {
+				display: inline-block;
+				margin-top: 10px;
+				padding: 8px 16px;
+				background-color: #C6CEDE;
+				color: #6B5BB03;
+				border-radius: 4px;
+				font-size: 0.9rem;
+			}
+			#modalImg {
+				width: 200px; 
+				height: 200px;
+				object-fit: cover; 
+				border-radius: 10px;
+				display: block;
+				margin: 0 auto 15px auto;
+			}
+			.modal-info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			.home1:link, .home3:visited {
+				text-decoration: none;
+				color: #E3FFF3;
+				transition: color 0.3s ease-in-out;
+			}
+			.home2:hover {
+				text-decoration: underline;
+				color: #5B7C99;
+			}
+		</style>
+	</head>
+	<body>
+		<img height="auto" width="1335px" src="banner.png" style="vertical-align: bottom;">
+		<div class="box">
+			<p style="color: #E3FFF3; font-size: 24px; text-align: center; margin-bottom: 3px;" class="fade-text"><strong>WELCOME TO <a href="ecommerceredo.html" class="home1 home2 home3">EVANESCERIS</a>!</p>
+			<hr color="#E3FFF3" size="2px" width="100%" style="margin-bottom: -3px;">
+			<p style="color: #E3FFF3; font-size: 18px; text-align: center; margin-bottom: 3px;" class="fade-text delay"><i>Venture through the shop and find your suitable interests!</i></p>
+		</div>
+		<div class="navbar" style="outline: 2px solid #E3FFF3;">
+			<a href="snc.html">Snacks and Candies</a>
+			<a href="p.html">Phonecases</a>
+			<a href="aboutevan.html">About</a>
+			<a href="blogs.html">Blogs</a>
+		</div>
+		<br>
+		<main role="main">
+			<div style="background-color: #C6CEDE; padding: 20px; border: 2px solid #E3FFF3;">
+				<h1 class="fade-text delay" style="color: #E3FFF3;">RECOMMENDED PRODUCTS!!</h1>
+				<hr class="dashed" width="100%">
+				<div class="product-grid">
+				<div class="product-card" data-name="Ignifryde" data-price="₱85.00" data-img="https://i.pinimg.com/1200x/1c/89/99/1c8999df3c2104960c3769faeab5be50.jpg">
+					<div class="product-image">
+						<a href="template_jacinto6.html"><img src="https://i.pinimg.com/1200x/1c/89/99/1c8999df3c2104960c3769faeab5be50.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Ignifryde</h3>
+						<p class="price">₱85.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/1c/89/99/1c8999df3c2104960c3769faeab5be50.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Hurtslabyul" data-price="₱85.00" data-img="https://i.pinimg.com/1200x/c1/34/9d/c1349d5f133b93971c06e2ff16de360f.jpg">
+					<div class="product-image">
+						<a href="template_jacinto7.html"><img src="https://i.pinimg.com/1200x/c1/34/9d/c1349d5f133b93971c06e2ff16de360f.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Hurtslabyul</h3>
+						<p class="price">₱85.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/c1/34/9d/c1349d5f133b93971c06e2ff16de360f.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Pummelfiore" data-price="₱85.00" data-img="https://i.pinimg.com/1200x/26/9a/53/269a53699553419747b4caad090ce02e.jpg">
+					<div class="product-image">
+						<a href="template_jacinto8.html"><img src="https://i.pinimg.com/1200x/26/9a/53/269a53699553419747b4caad090ce02e.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Pummelfiore</h3>
+						<p class="price">₱85.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/26/9a/53/269a53699553419747b4caad090ce02e.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Diesomnia" data-price="₱50.00" data-img="https://i.pinimg.com/1200x/5a/fe/22/5afe22bb531714acd5376b675dba1d23.jpg">
+					<div class="product-image">
+						<a href="template_jacinto9.html"><img src="https://i.pinimg.com/1200x/5a/fe/22/5afe22bb531714acd5376b675dba1d23.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Diesomnia</h3>
+						<p class="price">₱50.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/5a/fe/22/5afe22bb531714acd5376b675dba1d23.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Maskquerade" data-price="₱50.00" data-img="https://i.pinimg.com/736x/bb/da/d7/bbdad7f78423a33808a46f36cb94218e.jpg">
+					<div class="product-image">
+						<a href="template_jacinto10.html"><img src="https://i.pinimg.com/736x/bb/da/d7/bbdad7f78423a33808a46f36cb94218e.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Maskquerade </h3>
+						<p class="price">₱50.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/736x/bb/da/d7/bbdad7f78423a33808a46f36cb94218e.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="OB keychains" data-price="₱50.00" data-img="https://i.pinimg.com/1200x/68/69/1d/68691d8c2018feff63d95d47dfd0e133.jpg">
+					<div class="product-image">
+						<a href="template_jacinto11.html"><img src="https://i.pinimg.com/1200x/68/69/1d/68691d8c2018feff63d95d47dfd0e133.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">OB keychains</h3>
+						<p class="price">₱50.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/68/69/1d/68691d8c2018feff63d95d47dfd0e133.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Twinkers" data-price="₱15.00" data-img="https://i.pinimg.com/1200x/65/b8/22/65b8221e3fa7cfcda658569fb4a74bb0.jpg">
+					<div class="product-image">
+						<a href="template_jacinto12.html"><img src="https://i.pinimg.com/1200x/65/b8/22/65b8221e3fa7cfcda658569fb4a74bb0.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Twinkers</h3>
+						<p class="price">₱15.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/65/b8/22/65b8221e3fa7cfcda658569fb4a74bb0.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Twisted Critterland" data-price="₱15.00" data-img="https://i.pinimg.com/1200x/85/cb/e5/85cbe57033fc22ee010be5856853a8b6.jpg">
+					<div class="product-image">
+						<a href="template_jacinto13.html"><img src="https://i.pinimg.com/1200x/85/cb/e5/85cbe57033fc22ee010be5856853a8b6.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Twisted Critterland</h3>
+						<p class="price">₱15.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/85/cb/e5/85cbe57033fc22ee010be5856853a8b6.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Twisted Chibiland" data-price="₱15.00" data-img="https://i.pinimg.com/1200x/45/5f/17/455f177ad26d0bd91d42156e2c916797.jpg">
+					<div class="product-image">
+						<a href="template_jacinto14.html"><img src="https://i.pinimg.com/1200x/45/5f/17/455f177ad26d0bd91d42156e2c916797.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Twisted Chibiland</h3>
+						<p class="price">₱15.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/45/5f/17/455f177ad26d0bd91d42156e2c916797.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" data-name="Twisted Chiikawa" data-price="₱15.00" data-img="https://i.pinimg.com/1200x/2e/3e/2c/2e3e2c1d369c1125e4d328801ca7b954.jpg">
+					<div class="product-image">
+						<a href="template_jacinto15.html"><img src="https://i.pinimg.com/1200x/2e/3e/2c/2e3e2c1d369c1125e4d328801ca7b954.jpg"></a>
+					</div>
+					<div class="product-info">
+ 						<h3 style="color: #6B5BB0;">Twisted Chiikawa</h3>
+						<p class="price">₱15.00</p>
+						<button class="view-btn">Quick View</button>
+					</div>
+					<div id="productModal" class="modal">
+						<div class="modal-content">
+							<span class="close-btn">&times;</span>
+							<img id="modalImg" src="https://i.pinimg.com/1200x/2e/3e/2c/2e3e2c1d369c1125e4d328801ca7b954.jpg">
+							<h2 id="modalTitle"></h2>
+							<p id="modalPrice" class="modal-price"></p>
+							<button class="add-to-cart">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</main>
+		<br><br>
+		<footer>
+			<div style="margin-left: 10px; font-size: 25px; color: #E3FFF3;">
+				<dt class="fade-text">Evanesceris</dt>
+				<dd class="fade-text delay">Venture though the shop and find your suitable interests!</dd>
+			</div>
+			<button onclick="toggleText()" style="background-color: #6B5BB0; color: #C6CEDE; border-color: #6B5BB0; margin-left: 10px; margin-top: 20px;">Expand/Collapse</button>
+			<div id="collapsible-text">
+				<p style="color: #E3FFF3; font-size: 30px; margin-left: 10px; margin-bottom: 20px;">To learn more about Evansesceris, click the about button within the navigation bar if you want further details in regards to Evanesceris. You can explore deeper in this website to discover what piques your interest!</p>
+			</div>
+		</footer>
+		<script>
+			function toggleText() {
+				const textElement = document.getElementById('collapsible-text');
+ 				textElement.classList.toggle('hidden');
+			}
+			function nav(url) {
+				window.location.href = url;
+			}
+			const modal = document.getElementById("productModal");
+			const closeBtn = document.querySelector(".close-btn");
+			document.querySelectorAll(".view-btn").forEach(button => {
+				button.onclick = function() {
+					const card = this.closest(".product-card");
+					const name = card.getAttribute("data-name");
+					const price = card.getAttribute("data-price");
+					const imgPath = card.getAttribute("data-img");
+					document.getElementById("modalTitle").innerText = name;
+					document.getElementById("modalPrice").innerText = price;
+					document.getElementById("modalImg").src = imgPath;
+					modal.style.display = "flex";
+				};
+			});
+			closeBtn.onclick = () => modal.style.display = "none";
+			window.onclick = (event) => {
+				if (event.target == modal) modal.style.display = "none";
+			};
+			const addToCartBtn = document.querySelector(".add-to-cart");
+			addToCartBtn.onclick = function() {
+				const product = {
+					name: document.getElementById("modalTitle").innerText,
+					price: document.getElementById("modalPrice").innerText,
+					img: document.getElementById("modalImg").src
+				};
+				let cart = JSON.parse(localStorage.getItem("myCart")) || [];
+				cart.push(product);
+				localStorage.setItem("myCart", JSON.stringify(cart));
+				alert(product.name + " added to cart!");
+			};
+		</script>
+	</body>
+</html>
